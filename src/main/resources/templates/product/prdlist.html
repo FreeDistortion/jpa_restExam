@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="row">
+
+
+<div th:each="product:${productlist}">
+    <div class="col-md-4">
+        <div class="thumbnail">
+            <a th:href="@{/order/detail/{no}(no=${product.productNo})}">
+                <img th:src="${product.image}" alt="Lights" style="width:100%">
+                <div class="caption">
+                    <p th:text="${product.info}"/>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+</div>
+</body>
+</html>
